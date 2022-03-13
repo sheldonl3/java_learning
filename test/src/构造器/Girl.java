@@ -31,7 +31,7 @@ public class Girl {
 
     public void marry(Boy boy) {
         System.out.println("I will," + boy.getName());
-        boy.marry(this); //!!!
+        boy.marry(this); //使用this，代表当前正在创建的类的对象
     }
 
 }
