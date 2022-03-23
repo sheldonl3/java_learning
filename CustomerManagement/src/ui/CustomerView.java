@@ -132,7 +132,7 @@ public class CustomerView {
             if(isSuccess==true){
                 System.out.println("Delete Customer Success");
             }else {
-                System.out.println("Wrong in Customer Success");
+                System.out.println("Wrong in Customer Delete");
             }
         }else {
             return;
