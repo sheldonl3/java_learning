@@ -7,7 +7,6 @@ public class People {
     public People(int number, String name) {
         this.name = name;
         this.number = number;
-
     }
 
     public int getNumber() {
@@ -26,6 +25,7 @@ public class People {
         this.name = name;
     }
 
+    //1.equals
     //比较对象的内容是否相等，需要重写object的equals类（object类中的equals比较的是地址）
     @Override
     public boolean equals(Object obj) {
@@ -47,4 +47,14 @@ public class People {
 //        People people = (People) o;
 //        return getNumber() == people.getNumber() && Objects.equals(getName(), people.getName());
 //    }
+
+    //2.toString
+    //Object类中默认返回对象地址，需要重写返回对象内容
+    @Override
+    public String toString() {
+        return "People{" +
+                "number=" + number +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
