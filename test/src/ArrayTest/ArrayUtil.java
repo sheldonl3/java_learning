@@ -1,7 +1,7 @@
 package ArrayTest;
 
 public class ArrayUtil {
-    public int getMax(int[] arr) {
+    public static int getMax(int[] arr) {
         int max = 0;
         if (arr.length == 0) {
             System.out.println("no value");
@@ -15,7 +15,7 @@ public class ArrayUtil {
         }
         return max;
     }
-    public void reverse(int[] arr){
+    public static void reverse(int[] arr){
         for(int i=0;i<arr.length/2;i++){
             int tmp=arr[i];
             arr[i]=arr[arr.length-i-1];
