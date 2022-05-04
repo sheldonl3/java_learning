@@ -1,5 +1,6 @@
 package 设计模式;
 
+//抽象类的应用
 public class 模板方法 {
     public static void main(String[] args) {
         Template t = new SubTemplate();
