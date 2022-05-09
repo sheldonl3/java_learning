@@ -68,8 +68,8 @@ public class NameListService {
 
     //获取id员工
     public Employee getEmployee(int id) throws TeamException {
-        for (int i=0;i<employees.length;i++){
-            if(employees[i].getId()==id){
+        for (int i = 0; i < employees.length; i++) {
+            if (employees[i].getId() == id) {
                 return employees[i];
             }
         }
