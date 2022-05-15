@@ -38,9 +38,21 @@ class Order {
     private static Order order = null;
 
     //3.提供公共静态方法，返回对象
+    //synchronized同步方法，线程安全
+//    public static synchronized Order getOrder() {
+//        if (order == null) {
+//            order = new Order();
+//        }
+//        return order;
+//    }
+   //synchronized同步方法2,效率更高
     public static Order getOrder() {
         if (order == null) {
-            order = new Order();
+            synchronized (Order.class) {
+                if (order == null) {
+                    order = new Order();
+                }
+            }
         }
         return order;
     }
