@@ -41,9 +41,16 @@ public class TeamService {
         }
         //员工没有空
         Programmer p = (Programmer) e;//经过上面，不会失败
-        if (!"FREE".equalsIgnoreCase(p.getStatus().getNAME())) {
-            throw new TeamException("员工没有空,无法添加");
+//        if (!"FREE".equalsIgnoreCase(p.getStatus().getNAME())) {
+//            throw new TeamException("员工没有空,无法添加");
+//        }
+        switch (p.getStatus()){
+            case BUSY:
+                throw new TeamException("员工没有空,无法添加");
+            case VOCATION:
+                throw new TeamException("员工没有空,无法添加");
         }
+
 
         //获取 架构师、设计师、程序员数量,判断数量是否符合要求，还有空位
         int numOfArch = 0, numOfDes = 0, numOfPro = 0;
