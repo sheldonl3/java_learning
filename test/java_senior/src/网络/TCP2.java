@@ -24,7 +24,7 @@ public class TCP2 {
             while ((len=fis.read(buf))!=-1){
                 os.write(buf,0,len);
             }
-            socket.shutdownOutput();//发送完毕之后，告诉对方停止发送
+            socket.shutdownOutput();//发送完毕之后，告诉对方停止接受数据，准备反馈（防止死锁）
 
             //接受反馈
             InputStream is = socket.getInputStream();

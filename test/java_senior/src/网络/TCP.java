@@ -17,7 +17,7 @@ public class TCP {
         Socket socket = null;
         OutputStream os = null;
         try {
-            InetAddress inet = InetAddress.getByName("127.0.0.1");
+            InetAddress inet = InetAddress.getByName("127.0.0.1");//没有public构造器，不能new对象
             socket = new Socket(inet,8899);
             os = socket.getOutputStream();
             os.write("asd三大阿斯大赛的".getBytes());
