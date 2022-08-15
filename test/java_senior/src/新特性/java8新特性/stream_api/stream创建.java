@@ -1,4 +1,4 @@
-package 新特性.stream_api;
+package 新特性.java8新特性.stream_api;
 
 import org.junit.jupiter.api.Test;
 
@@ -38,7 +38,6 @@ public class stream创建 {
     @Test
     public void test3() {
         Stream<Integer> integerStream = Stream.of(1, 3, 4, 5, 7);
-
     }
 
 

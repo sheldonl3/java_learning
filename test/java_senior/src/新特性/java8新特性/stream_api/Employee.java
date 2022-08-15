@@ -1,4 +1,4 @@
-package 新特性.stream_api;
+package 新特性.java8新特性.stream_api;
 
 import java.util.Objects;
 
@@ -61,5 +61,15 @@ public class Employee {
     @Override
     public int hashCode() {
         return Objects.hash(id, name, age, salary);
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", salary=" + salary +
+                '}';
     }
 }
