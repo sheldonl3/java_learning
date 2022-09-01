@@ -11,7 +11,7 @@ public class 字节流 {
 
     //字节流处理 字符文本文件，有非英文字符会出现乱码
     @Test
-    public void test1(){
+    public void test1() {
         FileInputStream fr = null;
         try {
             //1.file类实例化
@@ -23,7 +23,7 @@ public class 字节流 {
             byte[] buf = new byte[5];   //字节流byte[]
             int len;
             while ((len = fr.read(buf)) != -1) {//判断每次读入数组的字符个数，末尾返回-1
-               String str= new String(buf,0,len);
+                String str = new String(buf, 0, len);
                 System.out.print(str);
             }
         } catch (IOException e) {
@@ -42,7 +42,7 @@ public class 字节流 {
 
     //处理非文本文件：图片复制
     @Test
-    public void test2(){
+    public void test2() {
         FileInputStream fis = null;
         FileOutputStream fos = null;
         try {
@@ -52,22 +52,22 @@ public class 字节流 {
             fis = new FileInputStream(src);
             fos = new FileOutputStream(des);
 
-            byte[] buf =new byte[5];
+            byte[] buf = new byte[5];
             int len;
-            while ((len=fis.read(buf))!=-1){
-                fos.write(buf,0,len);
+            while ((len = fis.read(buf)) != -1) {
+                fos.write(buf, 0, len);
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
         } finally {
-            if(fos!=null) {
+            if (fos != null) {
                 try {
                     fos.close();
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
             }
-            if(fis!=null) {
+            if (fis != null) {
                 try {
                     fis.close();
                 } catch (IOException e) {
@@ -79,7 +79,7 @@ public class 字节流 {
 
     //指定路径下的文件复制:文本也可以，不在内存中读就行
     @Test
-    public void copyFile(String src1,String des1){
+    public void copyFile(String src1, String des1) {
         FileInputStream fis = null;
         FileOutputStream fos = null;
         try {
@@ -89,22 +89,22 @@ public class 字节流 {
             fis = new FileInputStream(src);
             fos = new FileOutputStream(des);
 
-            byte[] buf =new byte[10];
+            byte[] buf = new byte[10];
             int len;
-            while ((len=fis.read(buf))!=-1){
-                fos.write(buf,0,len);
+            while ((len = fis.read(buf)) != -1) {
+                fos.write(buf, 0, len);
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
         } finally {
-            if(fos!=null) {
+            if (fos != null) {
                 try {
                     fos.close();
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
             }
-            if(fis!=null) {
+            if (fis != null) {
                 try {
                     fis.close();
                 } catch (IOException e) {
@@ -115,12 +115,12 @@ public class 字节流 {
     }
 
     @Test
-    public void testCopyFile(){
-        long starTime=System.currentTimeMillis();
-        String src="034.jpg";
-        String des="misaka.jpg";
-        copyFile(src,des);
-        long end=System.currentTimeMillis();
-        System.out.println((end-starTime)+" ms");
+    public void testCopyFile() {
+        long starTime = System.currentTimeMillis();
+        String src = "034.jpg";
+        String des = "misaka.jpg";
+        copyFile(src, des);
+        long end = System.currentTimeMillis();
+        System.out.println((end - starTime) + " ms");
     }
 }

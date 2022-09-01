@@ -36,7 +36,7 @@ public class UsbTest {
                 System.out.println("mp4停止使用");
             }
         });
-        USB.Compare();
+        USB.Compare();//接口使用自己的静态方法
         u.Compare2();
     }
 }
@@ -59,7 +59,7 @@ interface USB {
 
     //jdk8特性：接口还可以定义静态方法(只能接口自己用，实现类拿不到)、默认方法
     public static void Compare(){
-        System.out.println();
+        System.out.println("鱼鱼");
     }
     //默认方法可以在实现类中使用，如果和实现类的父类重名，则优先父类调用————>类优先原则
     public default void Compare2(){
