@@ -1,7 +1,6 @@
 package 新特性.java8新特性.optional类;
 
 
-
 import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
@@ -12,17 +11,17 @@ import java.util.Optional;
 public class Optional类 {
     //optional创建
     @Test
-    public void test1(){
+    public void test1() {
         Girl girl = new Girl("misaka");
         Optional<Girl> optionalGirl = Optional.of(girl);//of(T) 保证T非空
         System.out.println(optionalGirl);
 
-        girl=null;
+        girl = null;
         optionalGirl = Optional.ofNullable(girl);//ofNullable(T) T可以为null
         System.out.println(optionalGirl);
     }
 
-    public String getGirlName(Boy boy){
+    public String getGirlName(Boy boy) {
         Optional<Boy> boyOptional = Optional.ofNullable(boy);
         //boy1一定非空，否则用new的boy来替代
         Boy boy1 = boyOptional.orElse(new Boy(new Girl("xilai")));
@@ -33,9 +32,9 @@ public class Optional类 {
     }
 
     @Test
-    public void test2(){
+    public void test2() {
         //Boy boy=null;
-        Boy boy=new Boy(new Girl("asd"));
+        Boy boy = new Boy(new Girl("asd"));
         String girlName = getGirlName(boy);
         System.out.println(girlName);
 
