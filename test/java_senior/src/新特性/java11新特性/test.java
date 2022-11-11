@@ -60,6 +60,7 @@ public class test {
     @Test
     public void test4(){
         try {
+
             HttpClient httpClient = HttpClient.newHttpClient();
             HttpRequest httpRequest = HttpRequest.newBuilder(URI.create("https://www.baidu.com")).build();
             HttpResponse.BodyHandler<String> BodyHandler = HttpResponse.BodyHandlers.ofString();
